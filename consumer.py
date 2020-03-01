@@ -18,6 +18,8 @@ print(searchKeys)
 searchKey = input("Enter SearchKey:")
 sterm = input("Enter searchTerm:")
 
+dontterm = input("Enter dont term:")
+
 skeys = {"1":"fsz","2":"width","3":"height","4":"time","5":"totalsize","6":"total/fsz","7":"views"}
 
 print(skeys)
@@ -66,6 +68,8 @@ else:
 
 while len(imgs):
     im = imgs.pop(0)
+    if dontterm in im["title"]:
+        continue
     url = im["img"]
     if url in visited:
         continue
